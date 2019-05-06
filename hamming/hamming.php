@@ -14,14 +14,6 @@ function distance(string $strandA, string $strandB): int
     }
     $strandA_array = str_split($strandA);
     $strandB_array = str_split($strandB);
-    $hammingDifference = 0;
-    
-    for ($i = 0; $i < count($strandA_array); $i++) {
-        if ($strandA_array[$i] === $strandB_array[$i]) {
-            $hammingDifference += 0;
-        } else {
-            $hammingDifference += 1;
-        }
-    };
-    return $hammingDifference;
+    $hammingDifferenceArray = array_diff_assoc($strandA_array, $strandB_array);
+    return count($hammingDifferenceArray);
 }
